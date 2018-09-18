@@ -1,0 +1,145 @@
+<body class="w3-theme-l5">
+ 
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large"> 
+    <div  class="w3-bar-item w3-button w3-padding-large w3-theme-d4" title="Notifications"><i class="	fa fa-file-text-o w3-margin-right"> </i>회원가입</div>         
+ </div> 
+</div>  
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">  
+	<div style="max-width:500px;margin:auto">
+	 <%=form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+		  <div class="input-container">
+		    <i class="fa fa-user icon"></i>
+		    <%=f.text_field :nickname, autofocus: true, autocomplete: "off",class:"input-field", placeholder:"별명",:required => true %> 
+		  </div>
+		
+		  <div class="input-container">
+		    <i class="fa fa-envelope icon"></i>
+		    <%=f.email_field :email, autofocus: true, autocomplete: "email", class:"input-field", placeholder:"email 및 가입 인증 email",:required => true %> 
+		  </div>
+		  
+		  <div class="input-container">
+		    <i class="fa fa-key icon"></i>
+		    <%=f.password_field :password, autocomplete: "off", class:"input-field", placeholder:"password",:required => true %> 
+		  </div>
+		  
+		  <div class="input-container">
+		    <i class="fa fa-key icon"></i>
+		   <%=f.password_field :password_confirmation, autocomplete: "off", class:"input-field", placeholder:"repeat password",:required => true %>
+		  </div>
+		  
+		  <div class="input-container">
+		    <i class="fa fa-calendar-check-o icon"></i>
+		    <%=f.date_field :birthday, autofocus: true, autocomplete: "off", class:"input-field",:required => true  %>
+		  </div>
+		  
+		  <div class="input-container">
+		    <i class="	fa fa-comment-o icon"></i>
+		    <%=f.text_field :comment, autofocus: true, autocomplete: "off",class:"input-field", placeholder:"자기소개",:required => true %>
+		  </div> 
+		  
+		   <div class="input-container">
+		    <i class="fa fa-smile-o icon"></i> 
+		     <%=f.file_field :profile, autofocus: true, autocomplete: "off", class:"input-field",id:"profile"%> 
+		  </div>
+		  
+		  <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+			<%=f.radio_button :gender, 'f',class:"mdl-radio__button", id:"option-1" %>
+			<span class="mdl-radio__label">여자</span>
+			</label>
+			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+			<%=f.radio_button :gender, 'm', checked: true, class:"mdl-radio__button", id:"option-2"%>
+			<span class="mdl-radio__label">남자</span>
+			</label> 
+		   
+		   <br><br>
+		
+		  <button  type="submit" class="w3-button w3-white w3-border">회원가입</button> 
+	  <% end %>
+	  <br> 
+	   <a href="/users/sign_in"class="w3-text-blue" style="  font-color:blue" ><strong>로그인 하러가기</strong></a>
+	   
+	  
+	</div> 
+</div>
+
+ 
+ 
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.icon {
+    padding: 15px;
+    background: #555;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.input-field:focus {
+    border: 2px solid #555;
+}
+
+/* Set a style for the submit button */
+.btn {
+    background-color: #555;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style> 
+<script>
+    function onchange1(){ 
+    document.getElementById('filename1').value =  document.getElementById('ex_file1').value.replace(/C:\\fakepath\\/,'');
+  }
+</script>
